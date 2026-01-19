@@ -1,4 +1,3 @@
-// Change background color based on the section in view
 (function(){
 	const sections = Array.from(document.querySelectorAll('.section'));
 	const colors = [
