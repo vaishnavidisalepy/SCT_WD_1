@@ -1,0 +1,102 @@
+:root{
+	--accent: #6D28D9;
+	--accent-light: #A78BFA;
+	--text: #1f2937;
+	--muted: #6b7280;
+	--primary: #7C3AED;
+	--secondary: #EC4899;
+	--tertiary: #06B6D4;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+	margin:0;
+	font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+	color:var(--text);
+	background:linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+	transition:background 600ms ease;
+	-webkit-font-smoothing:antialiased;
+	min-height:100vh;
+}
+
+.wrap{max-width:1100px;margin:0 auto;padding:40px 20px}
+.site-header{position:fixed;left:0;right:0;top:0;backdrop-filter:blur(10px);background:rgba(255,255,255,0.85);z-index:40;box-shadow:0 4px 20px rgba(0,0,0,0.1)}
+.site-header .wrap{display:flex;align-items:center;justify-content:space-between;padding:18px 20px}
+.brand{font-weight:700;color:var(--primary);text-decoration:none;font-size:1.1rem;transition:transform 300ms ease}
+.brand:hover{transform:scale(1.05)}
+.nav a{margin-left:18px;color:var(--text);text-decoration:none;font-weight:600;transition:color 300ms ease,transform 300ms ease;position:relative}
+.nav a:hover{color:var(--primary);transform:translateY(-2px)}
+
+.section{min-height:85vh;display:flex;align-items:center;padding:100px 0}
+.hero-inner{display:flex;gap:40px;align-items:center;justify-content:space-between}
+.hero-text{max-width:680px}
+.hero h1{font-size:2.8rem;margin:0 0 12px;color:#FFFFFF;font-weight:800;text-shadow:2px 2px 4px rgba(0,0,0,0.2)}
+.hero p{color:#FFFFFF;font-size:1.1rem;margin-bottom:28px;text-shadow:1px 1px 2px rgba(0,0,0,0.2)}
+.btn{display:inline-block;background:linear-gradient(135deg,var(--primary),var(--secondary));color:white;padding:14px 28px;border-radius:12px;text-decoration:none;font-weight:700;transition:transform 300ms ease,box-shadow 300ms ease,background 300ms ease;box-shadow:0 8px 20px rgba(124,58,237,0.3);cursor:pointer;position:relative;overflow:hidden}
+.btn:hover{transform:translateY(-3px);box-shadow:0 12px 30px rgba(124,58,237,0.5);background:linear-gradient(135deg,#6D28D9,#DB2777)}
+.ripple{position:absolute;border-radius:50%;background:rgba(255,255,255,0.6);transform:scale(0);animation:ripple-animation 600ms ease-out}
+@keyframes ripple-animation{to{transform:scale(4);opacity:0}}
+.hero-art .pill{width:240px;height:240px;background:linear-gradient(135deg,#FF6B9D,#C06C84);border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 12px 40px rgba(192,108,132,0.3);animation:float 3s ease-in-out infinite}
+.pill .grain{font-size:72px;animation:spin 8s linear infinite}
+
+@keyframes float{0%,100%{transform:translateY(0px)}50%{transform:translateY(-20px)}}
+@keyframes spin{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}
+
+.section-title{text-align:center;font-size:2rem;margin-bottom:48px;font-weight:800;color:#FFFFFF;text-shadow:2px 2px 4px rgba(0,0,0,0.3)}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.card{background:white;padding:28px;border-radius:16px;box-shadow:0 10px 30px rgba(15,23,42,0.1);transition:transform 300ms ease,box-shadow 300ms ease;border:2px solid transparent;position:relative}
+.card:nth-child(1){border-color:#6D28D9}
+.card:nth-child(2){border-color:#EC4899}
+.card:nth-child(3){border-color:#06B6D4}
+.card::before{content:'';position:absolute;top:-2px;left:-2px;right:-2px;bottom:-2px;border-radius:16px;background:linear-gradient(135deg,#6D28D9,#EC4899);z-index:-1;opacity:0;transition:opacity 300ms ease}
+.card:hover::before{opacity:0.1}
+.card:hover{transform:translateY(-8px);box-shadow:0 15px 40px rgba(15,23,42,0.15)}
+.card h3{margin:0 0 12px;font-size:1.2rem;font-weight:700;color:#1f2937}
+.card p{margin:0;color:#333;font-size:0.95rem}
+
+.how-inner{display:flex;gap:40px;align-items:center}
+.how-step{flex:1}
+.how-step h2{font-size:2rem;margin-bottom:24px;font-weight:800;color:#FFFFFF;text-shadow:2px 2px 4px rgba(0,0,0,0.3)}
+.how-step ol{padding-left:24px;line-height:1.8;font-size:1.05rem;color:#FFFFFF;text-shadow:1px 1px 2px rgba(0,0,0,0.2)}
+.how-step li{margin-bottom:16px8px;flex-wrap:wrap;justify-content:center}
+.product-card{background:linear-gradient(135deg, white, #f8f9ff);padding:28px;border-radius:18px;min-width:220px;flex:1;max-width:360px;box-shadow:0 10px 35px rgba(124,58,237,0.15);transition:all 300ms ease;border:2px solid rgba(124,58,237,0.2)}
+.product-card:nth-child(2){border-color:rgba(236,72,153,0.2);box-shadow:0 10px 35px rgba(236,72,153,0.15)}
+.product-card:hover{transform:scale(1.05);box-shadow:0 20px 50px rgba(124,58,237,0.25)}
+.product-card h3{font-size:1.3rem;margin:0 0 12px;font-weight:800;color:#1f2937}
+.product-card p{color:#333;margin:10px 0}
+.price{font-weight:800;font-size:1.6rem;margin:12px 0;color:var(--primary)ease-in-out infinite}
+
+@keyframes bounce{0%,100%{transform:translateY(0)}50%{transform:translateY(-30px)}}
+
+.product-row{display:40px 0;color:white;text-align:center;background:linear-gradient(135deg, #667eea, #764ba2);border-top:3px solid rgba(255,255,255,0.2)}
+
+/* Animations */
+.fade-up{opacity:0;transform:translateY(30px);transition:opacity 600ms cubic-bezier(0.4,0,0.2,1),transform 600ms cubic-bezier(0.4,0,0.2,1)}
+.fade-up.in-view{opacity:1;transform:none}
+
+/* Smooth scrolling */
+html{scroll-behavior:smoothuted);text-align:center}
+
+/* Animations */
+.fade-up{opacity:0;transform:translateY(18px);transition:opacity 520ms ease, transform 520ms ease}
+.fade-up.in-view{opacity:1;transform:none}
+
+/* Responsive */
+@media (max-width:900px){
+	.hero h1{font-size:2rem}
+	.section-title{font-size:1.6rem}
+}
+@media (max-width:600px){
+	.cards{grid-template-columns:1fr}
+	.nav{display:none}
+	.hero h1{font-size:1.6rem}
+	.wrap{padding:28px 16px}
+	.section{padding:80px 0}
+	.hero-art .pill{width:160px;height:160px}
+	.pill .grain{font-size:48px}
+	.how-art .plate{font-size:72px
+	.hero h1{font-size:1.6rem}
+	.wrap{padding:28px 16px}
+	.section{padding:80px 0}
+}
